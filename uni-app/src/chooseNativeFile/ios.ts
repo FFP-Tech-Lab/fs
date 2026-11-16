@@ -13,7 +13,7 @@ type ChooseFileEvent = { files?: ChosenFile[] }
 type ChooseFileError = { code?: number; message?: string }
 type ChooseFileRequest = {
   title?: string
-  filetypes?: string[]
+  filetypes?: string[] | undefined
   multiple?: boolean
   success?: (event: ChooseFileEvent) => void
   fail?: (error: ChooseFileError) => void
@@ -146,7 +146,7 @@ function acceptChosenFiles(options: ChooseNativeFileOptions, paths: string[]): v
 
 function fileNameOf(path: string): string {
   const parts = String(path).split('/')
-  return parts.length > 0 ? parts[parts.length - 1] : ''
+  return parts[parts.length - 1] ?? ''
 }
 
 function ensureCacheDir(): string {
