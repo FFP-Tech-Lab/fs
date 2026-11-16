@@ -154,7 +154,7 @@ function ensureCacheDir(): string {
   if (!base) {
     throw new Error('ios caches directory unavailable')
   }
-  const dir = base + '/yelo-file-picker'
+  const dir = base + '/ffp-file-picker'
   const fm = fileManager()
   if (!nativeBool(iosInvoke(fm, 'fileExistsAtPath:', dir))) {
     iosInvoke(

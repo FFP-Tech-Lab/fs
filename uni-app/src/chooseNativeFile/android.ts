@@ -73,7 +73,7 @@ export function chooseNativeFileAndroid(options: ChooseNativeFileOptions): void 
 }
 
 function cacheDirPath(): string {
-  return plus.io.convertLocalFileSystemURL('_doc/yelo-file-picker')
+  return plus.io.convertLocalFileSystemURL('_doc/ffp-file-picker')
 }
 
 function ensureCacheDir(): void {
